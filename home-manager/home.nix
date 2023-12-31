@@ -34,6 +34,7 @@
       "editor.formatOnPaste" = true;
       "editor.formatOnSave" = true;
       "git.autofetch" = true;
+      "git.confirmSync" = false;
     };
   };
 

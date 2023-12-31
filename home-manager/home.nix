@@ -13,6 +13,12 @@
     };
   };
 
+  # Setup NerdFonts
+  fonts.fontconfig.enable = true;
+  home.packages = [
+    (pkgs.nerdfonts.override { fonts = [ "Hack" "FiraCode" ]; })
+  ];
+
   /* This is where I define program configurations. Most people take a modular approach, 
     and import them I prefer to have them all in one file. */
 

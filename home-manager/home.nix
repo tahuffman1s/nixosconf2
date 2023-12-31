@@ -33,6 +33,7 @@
       "nix.serverPath" = "rnix-lsp";
       "editor.formatOnPaste" = true;
       "editor.formatOnSave" = true;
+      "git.autofetch" = true;
     };
   };
 

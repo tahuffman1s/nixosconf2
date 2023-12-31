@@ -132,6 +132,7 @@
       heroic
       gimp
       lutris
+      signal-desktop
     ];
   };
 

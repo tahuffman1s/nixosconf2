@@ -109,6 +109,7 @@
     shellAliases = {
       ll = "ls -l";
       update = "sudo nixos-rebuild switch";
+      wipegarbage = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo nixos-rebuild switch";
     };
     oh-my-zsh = {
       enable = true;

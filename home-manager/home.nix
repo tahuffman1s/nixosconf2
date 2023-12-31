@@ -1,11 +1,20 @@
 { lib, config, pkgs, ... }: {
+
+  # Set state versions for packages.
   home.stateVersion = "23.11";
+
+  # Allow unfree packages for VsCode.
   nixpkgs.config.allowUnfree = true;
+
+  # Import NUR for easily setting firefox extensions.
   nixpkgs.config.packageOverrides = pkgs: {
     nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
       inherit pkgs;
     };
   };
+
+  /* This is where I define program configurations. Most people take a modular approach, 
+    and import them I prefer to have them all in one file. */
 
   # VsCode
   programs.vscode = {
@@ -84,5 +93,27 @@
         };
       };
     };
+  };
+
+  # Zsh
+  programs.zsh = {
+    enable = true;
+    enableAutosuggestions = true;
+    syntaxHighlighting.enable = true;
+    shellAliases = {
+      ll = "ls -l";
+      update = "sudo nixos-rebuild switch";
+    };
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+    };
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+    ];
   };
 }

@@ -119,6 +119,9 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Enable Zsh
+  programs.zsh.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.travis = {
     isNormalUser = true;
@@ -134,6 +137,7 @@
       lutris
       signal-desktop
     ];
+    shell = pkgs.zsh;
   };
 
   # Allow unfree packages

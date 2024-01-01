@@ -129,11 +129,4 @@
       }
     ];
   };
-
-  # programs.autorandr = {
-  #   enable = true;
-  #   profiles = {
-  #     "default" = { }
-  #       };
-  #   };
 }

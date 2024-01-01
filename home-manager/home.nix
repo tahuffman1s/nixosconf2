@@ -112,6 +112,7 @@
       ll = "ls -l";
       update = "sudo nixos-rebuild switch";
       wipegarbage = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo nixos-rebuild switch";
+      fixmonitors = "nvidia-settings --assign CurrentMetaMode=\"DP-4: 2560x1440_165 +0+0 { ForceFullCompositionPipeline = On } , DP-2: 2560x1440_165 +2560+0\" && xrandr --output DP-4 --primary";
     };
     oh-my-zsh = {
       enable = true;

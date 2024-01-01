@@ -51,6 +51,7 @@
       "git.autofetch" = true;
       "git.confirmSync" = false;
       "git.enableSmartCommit" = true;
+      "security.workspace.trust.untrustedFiles" = "open";
     };
   };
 
@@ -128,4 +129,11 @@
       }
     ];
   };
+
+  # programs.autorandr = {
+  #   enable = true;
+  #   profiles = {
+  #     "default" = { }
+  #       };
+  #   };
 }

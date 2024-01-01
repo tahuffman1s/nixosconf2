@@ -39,6 +39,7 @@
       oderwat.indent-rainbow
       jnoortheen.nix-ide
       dracula-theme.theme-dracula
+      foxundermoon.shell-format
     ];
     userSettings = {
       "window.autoDetectColorScheme" = true;

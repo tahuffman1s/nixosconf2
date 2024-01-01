@@ -152,6 +152,7 @@
     psensor
     tela-circle-icon-theme
     rnix-lsp
+    autorandr
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

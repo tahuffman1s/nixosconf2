@@ -128,7 +128,7 @@
     description = "Travis Huffman";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      libreoffice
+      libreoffice-qt
       protonvpn-gui
       steam
       vlc
@@ -153,6 +153,7 @@
     tela-circle-icon-theme
     rnix-lsp
     autorandr
+    neofetch
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

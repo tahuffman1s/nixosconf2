@@ -154,6 +154,7 @@
     rnix-lsp
     autorandr
     neofetch
+    wireguard-tools
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

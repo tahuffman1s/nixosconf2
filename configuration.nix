@@ -132,7 +132,7 @@
       steam
       vlc
       heroic
-      gimp
+      gimp-with-plugins
       lutris
       signal-desktop
     ];

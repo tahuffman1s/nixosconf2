@@ -63,6 +63,8 @@
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
+      OfferToSaveLogins = false;
+      OfferToSaveLoginsDefault = false;
       EnableTrackingProtection = {
         Value = true;
         Locked = true;
@@ -77,6 +79,9 @@
         SponsoredPocket = false;
         Snippets = false;
         Locked = true;
+      };
+      SearchEngines = {
+        PreventInstalls = true;
       };
     };
     profiles = {
@@ -97,6 +102,34 @@
               updateInterval = 24 * 60 * 60 * 1000; # every day
               definedAliases = [ "@br" ];
             };
+            "Proton DB" = {
+              urls = [{ template = "https://www.protondb.com/search?q={searchTerms}"; }];
+              iconUpdateURL = "https://www.protondb.com/sites/protondb/images/site-logo.svg";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [ "@pr" ];
+            };
+            "Nix Packages" = {
+              urls = [{
+                template = "https://search.nixos.org/packages";
+                params = [
+                  { name = "type"; value = "packages"; }
+                  { name = "query"; value = "{searchTerms}"; }
+                ];
+              }];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [ "@np" ];
+            };
+            "NixOS Wiki" = {
+              urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
+              iconUpdateURL = "https://nixos.wiki/favicon.png";
+              updateInterval = 24 * 60 * 60 * 1000;
+              definedAliases = [ "@nw" ];
+            };
+            "Wikipedia (en)".metaData.alias = "@wiki";
+            "Google".metaData.hidden = true;
+            "Amazon.com".metaData.hidden = true;
+            "Bing".metaData.hidden = true;
+            "eBay".metaData.hidden = true;
           };
         };
       };

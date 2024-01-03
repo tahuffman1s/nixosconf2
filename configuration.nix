@@ -129,7 +129,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       libreoffice-qt
-      protonvpn-gui
       steam
       vlc
       heroic

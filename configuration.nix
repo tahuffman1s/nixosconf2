@@ -135,12 +135,18 @@
       gimp-with-plugins
       lutris
       signal-desktop
+      obsidian
     ];
     shell = pkgs.zsh;
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Allow Electron version for obsidian
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

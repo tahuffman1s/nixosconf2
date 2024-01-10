@@ -143,6 +143,10 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   # Allow Electron version for obsidian
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
@@ -160,6 +164,8 @@
     autorandr
     neofetch
     wireguard-tools
+    libsForQt5.kdeconnect-kde
+    netcat-gnu
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -176,8 +182,15 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPortRanges = [{
+    from = 1714;
+    to = 1764;
+  }];
+
+  networking.firewall.allowedUDPPortRanges = [{
+    from = 1714;
+    to = 1764;
+  }];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

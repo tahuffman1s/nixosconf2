@@ -26,7 +26,7 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
-    mutableExtensionsDir = true;
+    mutableExtensionsDir = false;
     enableExtensionUpdateCheck = true;
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
@@ -40,6 +40,19 @@
       jnoortheen.nix-ide
       dracula-theme.theme-dracula
       foxundermoon.shell-format
+    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "remote-ssh-edit";
+        publisher = "ms-vscode-remote";
+        version = "0.47.2";
+        sha256 = "1hp6gjh4xp2m1xlm1jsdzxw9d8frkiidhph6nvl24d0h8z34w49g";
+      }
+      {
+        name = "code-d";
+        publisher = "webfreak";
+        version = "0.23.2";
+        sha256 = "v/Dck4gE9kRkfIWPAkUmPqewyTVVKrBgAjpNuCROClE=";
+      }
     ];
     userSettings = {
       "window.autoDetectColorScheme" = true;

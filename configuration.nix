@@ -166,6 +166,7 @@
     wireguard-tools
     libsForQt5.kdeconnect-kde
     netcat-gnu
+    gparted
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

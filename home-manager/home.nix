@@ -96,6 +96,7 @@
       SearchEngines = {
         PreventInstalls = true;
       };
+      DisableFormHistory = false;
     };
     profiles = {
       default = {

@@ -3,7 +3,11 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+  unstable = import 
+    (builtins.fetchTarball "channel:nixos-unstable")
+    { config = config.nixpkgs.config; };
+in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -136,6 +140,9 @@
       lutris
       signal-desktop
       obsidian
+      thunderbird
+      protonmail-bridge
+      unstable.protonvpn-gui
     ];
     shell = pkgs.zsh;
   };
@@ -152,6 +159,7 @@
     "electron-25.9.0"
   ];
 
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -167,6 +175,8 @@
     libsForQt5.kdeconnect-kde
     netcat-gnu
     gparted
+    python311Packages.protonvpn-nm-lib
+    screen
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

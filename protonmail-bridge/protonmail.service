@@ -1,0 +1,13 @@
+[Unit]
+Description=Service to run the Protonmail bridge client
+After=network.target
+
+[Service]
+Type=oneshot
+User=protonmail
+ExecStart=/home/travis/nixos/protonmail-bridge/protonmail.sh start
+ExecStop=/home/travis/nixos/protonmail-bridge/protonmail.sh stop
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

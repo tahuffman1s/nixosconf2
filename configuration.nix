@@ -4,7 +4,7 @@
 
 { config, pkgs, ... }:
 let
-  unstable = import 
+  unstable = import
     (builtins.fetchTarball "channel:nixos-unstable")
     { config = config.nixpkgs.config; };
 in
@@ -143,6 +143,7 @@ in
       thunderbird
       protonmail-bridge
       unstable.protonvpn-gui
+      libsForQt5.ktorrent
     ];
     shell = pkgs.zsh;
   };

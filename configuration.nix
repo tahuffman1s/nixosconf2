@@ -147,6 +147,7 @@ in
       protonmail-bridge
       unstable.protonvpn-gui
       libsForQt5.ktorrent
+      protonup-qt
     ];
     shell = pkgs.zsh;
   };
@@ -181,7 +182,12 @@ in
     gparted
     python311Packages.protonvpn-nm-lib
     screen
+    mangohud
   ];
+
+  environment.variables = {
+    MANGOHUD = "1";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -162,8 +162,10 @@ in
   # Allow Electron version for obsidian
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
+    "electron-19.1.9"
   ];
 
+  virtualisation.virtualbox.host.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -183,6 +185,12 @@ in
     python311Packages.protonvpn-nm-lib
     screen
     mangohud
+    mesa-demos
+    vkbasalt
+    lazarus-qt
+    vulkan-tools
+    goverlay
+    etcher
   ];
 
   environment.variables = {

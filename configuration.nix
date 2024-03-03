@@ -4,9 +4,6 @@
 
 { config, pkgs, ... }:
 let
-  unstable = import
-    (builtins.fetchTarball "channel:nixos-unstable")
-    { config = config.nixpkgs.config; };
 in
 {
   imports = [
@@ -87,12 +84,14 @@ in
     LC_TIME = "en_US.UTF-8";
   };
 
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -145,7 +144,7 @@ in
       obsidian
       thunderbird
       protonmail-bridge
-      unstable.protonvpn-gui
+      protonvpn-gui
       libsForQt5.ktorrent
       protonup-qt
     ];
@@ -232,6 +231,6 @@ in
   system.stateVersion = "23.11"; # Did you read the comment?
 
   home-manager = {
-    users = { travis = import ../nixos/home-manager/home.nix; };
+    users = { travis = import home-manager/home.nix; };
   };
 }

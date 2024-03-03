@@ -38,7 +38,6 @@
       eamodio.gitlens
       oderwat.indent-rainbow
       jnoortheen.nix-ide
-      dracula-theme.theme-dracula
       foxundermoon.shell-format
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
@@ -53,11 +52,17 @@
         version = "0.23.2";
         sha256 = "v/Dck4gE9kRkfIWPAkUmPqewyTVVKrBgAjpNuCROClE=";
       }
+      {
+        name = "breeze";
+        publisher = "kde";
+        version = "0.0.4";
+        sha256 = "3kFeBPBXhta8U9gollO6+anMmmE8OD3vDlVvsMbBtoU=";
+      }
     ];
     userSettings = {
       "window.autoDetectColorScheme" = true;
-      "window.titleBarStyle" = "custom";
-      "workbench.colorTheme" = "Dracula";
+      "window.menuBarVisibility" = "toggle";
+      "workbench.colorTheme" = "Breeze Dark";
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "rnix-lsp";
       "editor.formatOnPaste" = true;

@@ -181,6 +181,7 @@ in
     libsForQt5.kdeconnect-kde
     netcat-gnu
     gparted
+    openrgb
     python311Packages.protonvpn-nm-lib
     screen
     mangohud

@@ -113,8 +113,14 @@
         ];
         search = {
           force = true;
-          default = "Brave";
+          default = "StartPage";
           engines = {
+            "StartPage" = {
+              urls = [{ template = "https://www.startpage.com/sp/search?q={searchTerms}"; }];
+              iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon--default.ico";
+              updateInterval = 24 * 60 * 60 * 1000; # every day
+              definedAliases = [ "@sp" ];
+            };
             "Brave" = {
               urls = [{ template = "https://search.brave.com/search?q={searchTerms}"; }];
               iconUpdateURL = "https://cdn.icon-icons.com/icons2/2552/PNG/512/brave_browser_logo_icon_153013.png";
@@ -144,6 +150,7 @@
               updateInterval = 24 * 60 * 60 * 1000;
               definedAliases = [ "@nw" ];
             };
+            "DuckDuckGo".metaData.alias = "@dg";
             "Wikipedia (en)".metaData.alias = "@wiki";
             "Google".metaData.hidden = true;
             "Amazon.com".metaData.hidden = true;

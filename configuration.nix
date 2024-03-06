@@ -16,6 +16,9 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Kernel Modules for OpenRGB
+  boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];
+
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
@@ -154,6 +157,10 @@ in
     shell = pkgs.zsh;
   };
 
+
+  # Enable Ratbag
+  services.ratbagd.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -179,6 +186,7 @@ in
     tela-circle-icon-theme
     rnix-lsp
     autorandr
+    openrgb
     neofetch
     libratbag
     wireguard-tools
@@ -195,6 +203,11 @@ in
     vulkan-tools
     goverlay
     etcher
+  ];
+
+  # Udev rules for packages that need them
+  services.udev.packages = with pkgs; [
+    openrgb
   ];
 
   environment.variables = {

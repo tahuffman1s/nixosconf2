@@ -139,6 +139,9 @@ in
       vlc
       heroic
       gimp-with-plugins
+      kdePackages.kpat
+      piper
+      krita
       lutris
       signal-desktop
       obsidian
@@ -179,9 +182,9 @@ in
     neofetch
     wireguard-tools
     libsForQt5.kdeconnect-kde
+    libsForQt5.kservice
     netcat-gnu
     gparted
-    openrgb
     python311Packages.protonvpn-nm-lib
     screen
     mangohud

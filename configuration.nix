@@ -180,6 +180,7 @@ in
     rnix-lsp
     autorandr
     neofetch
+    libratbag
     wireguard-tools
     libsForQt5.kdeconnect-kde
     libsForQt5.kservice

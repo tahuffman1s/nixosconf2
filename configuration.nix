@@ -152,6 +152,7 @@ in
       protonmail-bridge
       protonvpn-gui
       libsForQt5.ktorrent
+      minecraft
       protonup-qt
     ];
     shell = pkgs.zsh;

@@ -152,8 +152,9 @@ in
       protonmail-bridge
       protonvpn-gui
       libsForQt5.ktorrent
-      minecraft
+      prismlauncher-qt5
       protonup-qt
+      spotify
     ];
     shell = pkgs.zsh;
   };
